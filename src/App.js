@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import logo from './logo.svg'
 
-function App() {
+
+function Name(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <p>
+      <img src={props.logo} />
+    </p>
+  )
+}
+
+export function Surname(props) {
+  return (
+    <>
+      <p>
+        {props.lastName}
+      </p>
+      <p>
+        {props.age}
+      </p>
+    </>
+  )
+}
+
+const App = () => {
+  const Greeting = 'Hello'
+
+  const myFunc = () => {
+    console.log('barev')
+  }
+
+  return (
+    <>
+      <div className="App">
+        {Greeting}
+        {myFunc()}
+        <Name />
+        <Surname lastName='Doe' age='22' />
+      </div>
+      <div className="App">
+        <Name  logo={logo}/>
+        {/* <Surname /> */}
+      </div>
+    </>
   );
 }
 
