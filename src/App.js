@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg'
+import Person from './classes';
 
 
 function Name(props) {
@@ -37,9 +38,10 @@ const App = () => {
         {myFunc()}
         <Name />
         <Surname lastName='Doe' age='22' />
+
       </div>
       <div className="App">
-        <Name  logo={logo}/>
+        <Person name='Joe'/>
         {/* <Surname /> */}
       </div>
     </>
