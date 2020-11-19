@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg'
+import Counter from './Counter'
 import Person from './classes';
+//import './lesson-5';
 
 
 function Name(props) {
@@ -42,6 +44,7 @@ const App = () => {
       </div>
       <div className="App">
         <Person name='Joe'/>
+        <Counter />
         {/* <Surname /> */}
       </div>
     </>
