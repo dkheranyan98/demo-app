@@ -1,19 +1,21 @@
 import React, {Component} from 'react';
 
 
-class Person extends Component {
+class Animal  {
 
-    constructor(props){
-        super(props)
+    constructor(species,name){
+       this.name = name
+       this.species = species
     }
     
-    render() {
-        const nameFromProps = this.props.name
-        // console.log(this.props,  'props')
-        return (
-            <div> Hello from {this.props.name} </div>
-        );
-    }
+   eat() {
+       return 'eating...';
+   }
+   run = () => 'running...'
+   sleep = () => 'sleeping...'
 }
 
-export default Person;
+const dog = new Animal('dog', 'Doggo');
+
+
+console.log(dog)
