@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default function Confirm(props) {
 
     return (
-          <Modal centered show={true} onHide={props.onClose} animation={false}>
+          <Modal centered show={true} onHide={props.onClose} animation={true}>
             <Modal.Header closeButton>
               <Modal.Title>Are you sure you want to delete this {props.count} tasks</Modal.Title>
             </Modal.Header>

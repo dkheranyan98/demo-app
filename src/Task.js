@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  Button, Card } from 'react-bootstrap';
+import { formatDate } from './utils'
 import './task.css';
 import PropTypes from 'prop-types';
 
@@ -34,9 +35,15 @@ export default class Task extends Component {
                     type='checkbox'
                     onClick={this.handleCheck}
                     />
-                    <Card.Title>{task.text.slice(0, 10) + '...'}</Card.Title>
+                    <Card.Title>{task.title}</Card.Title>
                     <Card.Text>
-                        {task.text}
+                        Description: {task.description}
+                    </Card.Text>
+                    <Card.Text>
+                        Date: {formatDate(task.date)}
+                    </Card.Text>
+                    <Card.Text>
+                        Created At: {formatDate(task.created_at)}
                     </Card.Text>
                     <Button 
                     variant="danger" 
@@ -44,6 +51,13 @@ export default class Task extends Component {
                     disabled={disabled}
                     >
                         <FontAwesomeIcon icon={faTrash} />
+                    </Button>
+                    <Button 
+                    variant="primary" 
+                    onClick={() => this.props.onEdit(task)}
+                    disabled={disabled}
+                    >
+                        <FontAwesomeIcon icon={faEdit} />
                     </Button>
                 </Card.Body>
             </Card>
